@@ -6,7 +6,7 @@ from tenacity import retry, wait_random_exponential, stop_after_attempt
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 MODEL = "gpt-4o"
-DATABASE = "db\countries_database.sqlite"
+DATABASE = "countries_database.sqlite"
 USER_MESSAGE = "Top 10 matches with most goals"
 
 @retry(wait=wait_random_exponential(min=1, max=40), stop=stop_after_attempt(3))
